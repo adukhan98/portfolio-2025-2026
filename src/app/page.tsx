@@ -88,7 +88,11 @@ export default function Home() {
                       <span className={styles.timelinePeriod}>{role.period}</span>
                     </div>
                     <h4 className={styles.timelineRole}>{role.role}</h4>
-                    <p className={styles.timelineDesc}>{role.description}</p>
+                    <ul className={styles.timelineDesc}>
+                      {role.description.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </AnimatedSection>
