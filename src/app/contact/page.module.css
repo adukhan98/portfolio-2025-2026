@@ -68,6 +68,13 @@
     margin-bottom: var(--space-6);
 }
 
+.header p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 .socialLinks {
     display: flex;
     flex-direction: column;
