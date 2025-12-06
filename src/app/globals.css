@@ -154,8 +154,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  selection-background-color: var(--accent);
-  selection-color: #fff;
   transition: background-color var(--transition-base), color var(--transition-base);
   /* Smooth theme switch */
 }
@@ -175,7 +173,7 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(var(--text-4xl), 8vw, var(--text-7xl));
+  font-size: clamp(2.5rem, 8vw, var(--text-7xl));
 }
 
 h2 {
@@ -214,10 +212,17 @@ a:hover {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-4);
+  /* reduced for mobile */
 }
 
 @media (min-width: 768px) {
+  .container {
+    padding: 0 var(--space-8);
+  }
+}
+
+@media (min-width: 1024px) {
   .container {
     padding: 0 var(--space-10);
   }
@@ -225,10 +230,17 @@ a:hover {
 
 /* Section Spacing */
 .section {
-  padding: var(--space-20) 0;
+  padding: var(--space-12) 0;
+  /* reduced from space-20 for mobile */
 }
 
 @media (min-width: 768px) {
+  .section {
+    padding: var(--space-20) 0;
+  }
+}
+
+@media (min-width: 1024px) {
   .section {
     padding: var(--space-32) 0;
   }

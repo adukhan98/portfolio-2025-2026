@@ -26,6 +26,29 @@
     }
 }
 
+/* Mobile Adjustments for Footer */
+@media (max-width: 767px) {
+    .content {
+        text-align: center;
+        gap: var(--space-8);
+    }
+
+    .socials {
+        align-items: center;
+        /* Center align social icons on mobile */
+        text-align: center;
+    }
+
+    .socialIcons {
+        justify-content: center;
+    }
+
+    .left {
+        max-width: 100%;
+        margin-bottom: var(--space-4);
+    }
+}
+
 .left {
     max-width: 300px;
 }

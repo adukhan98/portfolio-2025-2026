@@ -18,9 +18,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Adnaan Khan | AI Product Manager",
+  title: "Welcome to Adnaan's portfolio",
   description:
-    "AI Product Manager enabling smarter, faster, more human work. Designing AI-powered productivity products that eliminate manual drudgery and help enterprises scale knowledge, accuracy, and decision-making.",
+    "AI Product Manager enabling smarter, faster, more human work. Designing AI-powered productivity products that eliminate manual drudgery.",
   keywords: [
     "AI Product Manager",
     "Product Management",
@@ -29,20 +29,21 @@ export const metadata: Metadata = {
     "Enterprise AI",
     "GenAI",
     "Toronto",
+    "Adnaan Khan",
   ],
   authors: [{ name: "Adnaan Khan" }],
   openGraph: {
-    title: "Adnaan Khan | AI Product Manager",
+    title: "Welcome to Adnaan's portfolio",
     description:
-      "AI Product Manager enabling smarter, faster, more human work.",
+      "Explore the work and experiments of Adnaan Khan – Product Manager, Creator, and Builder.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Adnaan Khan | AI Product Manager",
+    title: "Welcome to Adnaan's portfolio",
     description:
-      "AI Product Manager enabling smarter, faster, more human work.",
+      "Explore the work and experiments of Adnaan Khan – Product Manager, Creator, and Builder.",
   },
   robots: {
     index: true,

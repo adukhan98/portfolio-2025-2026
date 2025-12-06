@@ -196,7 +196,14 @@
 
 .timelineItem {
   position: relative;
-  padding-left: var(--space-10);
+  padding-left: var(--space-6);
+  /* reduced from 10 */
+}
+
+@media (min-width: 768px) {
+  .timelineItem {
+    padding-left: var(--space-10);
+  }
 }
 
 .timelineDot {
