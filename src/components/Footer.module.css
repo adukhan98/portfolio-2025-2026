@@ -1,0 +1,127 @@
+.footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    padding: var(--space-16) 0 var(--space-8);
+    margin-top: var(--space-24);
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+}
+
+.content {
+    display: grid;
+    gap: var(--space-8);
+    margin-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+    .content {
+        grid-template-columns: 1fr 2fr 1fr;
+        /* Brand | Nav | Social */
+        gap: var(--space-12);
+        align-items: start;
+    }
+}
+
+.left {
+    max-width: 300px;
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: var(--text-2xl);
+    font-weight: 500;
+    color: var(--text-primary);
+    display: inline-block;
+    margin-bottom: var(--space-3);
+}
+
+.tagline {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    /* Center nav in middle column */
+    width: 100%;
+}
+
+.socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    /* Align social to right */
+    text-align: right;
+}
+
+.linkGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+    /* Increased gap for better distribution */
+    align-items: center;
+    justify-content: center;
+}
+
+.linkGroupTitle {
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-bottom: var(--space-2);
+}
+
+.linkGroup a {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.linkGroup a:hover {
+    color: var(--text-primary);
+}
+
+.socialIcons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    justify-content: flex-end;
+}
+
+.socialLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius-md);
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+}
+
+.socialLink:hover {
+    background: var(--accent-glow);
+    color: var(--accent-light);
+    transform: translateY(-2px);
+}
+
+.bottom {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--border-color);
+}
+
+.copyright {
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    text-align: center;
+}

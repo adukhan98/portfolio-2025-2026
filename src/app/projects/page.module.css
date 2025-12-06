@@ -1,0 +1,38 @@
+.page {
+    padding-top: var(--header-height);
+}
+
+.header {
+    text-align: center;
+    padding: var(--space-16) var(--space-6) var(--space-12);
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+.header h1 {
+    margin-bottom: var(--space-4);
+}
+
+.header p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.caseStudies {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6) var(--space-24);
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-6);
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,154 @@
+.page {
+    padding-top: var(--header-height);
+    padding-bottom: var(--space-12);
+}
+
+.header {
+    text-align: center;
+    padding: var(--space-16) var(--space-6);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header h1 {
+    margin-bottom: var(--space-6);
+}
+
+.intro {
+    font-size: var(--text-xl);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+}
+
+@media (min-width: 768px) {
+    .content {
+        padding: 0 var(--space-10);
+    }
+}
+
+.section {
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    gap: var(--space-10);
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-16);
+    }
+
+    .reverseMobile .imageColumn {
+        order: 2;
+        /* Switch order if needed for variety, but standard is text left usually? TSX had image first in reverse block. */
+        /* In TSX: grid has imageColumn then textColumn. If I want image on right on desktop, I don't need order change if grid is 1fr 1fr. 
+           But if I want 2nd section to alternate, I can swap in TSX or here. 
+           In TSX I put image first for specific section. */
+    }
+}
+
+.textColumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.textColumn h2 {
+    font-size: var(--text-3xl);
+    color: var(--text-primary);
+}
+
+.textColumn p {
+    font-size: var(--text-lg);
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.image {
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.imageWrapper:hover .image {
+    transform: scale(1.03);
+}
+
+.interestsList {
+    list-style: none;
+    margin-top: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.interestsList li {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.interestsList strong {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.centerTitle {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    font-size: var(--text-3xl);
+}
+
+.valuesGrid {
+    display: grid;
+    gap: var(--space-6);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.valueCard {
+    background: var(--bg-card);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+}
+
+.valueCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+.valueCard h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.valueCard p {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+}

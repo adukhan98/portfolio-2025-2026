@@ -1,66 +1,111 @@
+"use client";
+
+import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link"; // Added missing Link import
+import Button from "@/components/Button";
+import SocialProof from "@/components/SocialProof";
+import AnimatedSection from "@/components/AnimatedSection";
+import { experiences as experience } from "@/data/experience";
 import styles from "./page.module.css";
+// Importing timeline styles from experience module because we want to mimic it. 
+// However, reusing css modules across files in Next.js isn't direct if they are not global. 
+// I will copy the minimal necessary timeline styles to page.module.css to avoid conflicts or duplicate the loop.
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      {/* Hero Section */}
+      <section className={styles.hero}>
+        <div className={styles.heroContainer}>
+          <motion.div
+            className={styles.heroContent}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <h1 className={styles.name}>Adnaan Khan</h1>
+            <h2 className={styles.headline}>
+              I like building and scaling products.
+            </h2>
+            <p className={styles.bio}>
+              I build AI-powered products that eliminate manual drudgery and help
+              enterprises scale knowledge, accuracy, and decision-making.
+            </p>
+            <div className={styles.heroCtas}>
+              <Button href="/projects" variant="primary" size="lg">
+                View Selected Projects
+              </Button>
+              <Button href="/contact" variant="ghost" size="lg">
+                Get In Touch
+              </Button>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className={styles.heroImageWrapper}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            Documentation
-          </a>
+            <div className={styles.imageReveal}>
+              <Image
+                src="/images/home-portrait.jpg"
+                alt="Adnaan Khan"
+                fill
+                priority
+                className={styles.heroImage}
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className={styles.imageOverlay} />
+            </div>
+          </motion.div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Social Proof */}
+      <SocialProof />
+
+      {/* Experience Section (Replaces Projects) */}
+      <section className={styles.featuredWork}> {/* Keeping class name for spacing, but logically it's experience */}
+        <div className={styles.container}>
+          <AnimatedSection>
+            <div className={styles.sectionHeader}>
+              <h2 className={styles.sectionTitle}>Experience</h2>
+              <div className={styles.divider} />
+              <Link href="/experience" className={styles.viewMoreLink}>View Full Timeline</Link>
+            </div>
+          </AnimatedSection>
+
+          <div className={styles.timeline}>
+            {experience.slice(0, 3).map((role, index) => (
+              <AnimatedSection key={index} delay={index * 0.1}>
+                <div className={styles.timelineItem}>
+                  <div className={styles.timelineDot} />
+                  <div className={styles.timelineContent}>
+                    <div className={styles.timelineHeader}>
+                      <h3>{role.company}</h3>
+                      <span className={styles.timelinePeriod}>{role.period}</span>
+                    </div>
+                    <h4 className={styles.timelineRole}>{role.role}</h4>
+                    <p className={styles.timelineDesc}>{role.description}</p>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className={styles.ctaSection}>
+        <AnimatedSection className={styles.ctaContent}>
+          <h2>Ready to build something meaningful?</h2>
+          <Button href="/contact" variant="primary" size="lg">
+            Let&apos;s Talk
+          </Button>
+        </AnimatedSection>
+      </section>
+    </>
   );
 }
