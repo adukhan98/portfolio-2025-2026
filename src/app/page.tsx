@@ -16,6 +16,10 @@ import styles from "./page.module.css";
 // Feature flag for audio-first landing page
 const AUDIO_LANDING_ENABLED = process.env.NEXT_PUBLIC_AUDIO_LANDING === '1';
 
+if (typeof window !== "undefined") {
+  console.log("[Debug] Audio Landing Enabled:", AUDIO_LANDING_ENABLED, "Value:", process.env.NEXT_PUBLIC_AUDIO_LANDING);
+}
+
 export default function Home() {
   return (
     <>
