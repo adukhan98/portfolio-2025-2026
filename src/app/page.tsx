@@ -6,62 +6,71 @@ import Link from "next/link"; // Added missing Link import
 import Button from "@/components/Button";
 import SocialProof from "@/components/SocialProof";
 import AnimatedSection from "@/components/AnimatedSection";
+import AudioHero from "@/components/landing/AudioHero";
 import { experiences as experience } from "@/data/experience";
 import styles from "./page.module.css";
 // Importing timeline styles from experience module because we want to mimic it. 
 // However, reusing css modules across files in Next.js isn't direct if they are not global. 
 // I will copy the minimal necessary timeline styles to page.module.css to avoid conflicts or duplicate the loop.
 
+// Feature flag for audio-first landing page
+const AUDIO_LANDING_ENABLED = process.env.NEXT_PUBLIC_AUDIO_LANDING === '1';
+
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroContainer}>
-          <motion.div
-            className={styles.heroContent}
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
-          >
-            <h1 className={styles.name}>Adnaan Khan</h1>
-            <h2 className={styles.headline}>
-              I like building and scaling products.
-            </h2>
-            <p className={styles.bio}>
-              I build AI-powered products that eliminate manual drudgery and help
-              enterprises scale knowledge, accuracy, and decision-making.
-            </p>
-            <div className={styles.heroCtas}>
-              <Button href="/projects" variant="primary" size="lg">
-                View Selected Projects
-              </Button>
-              <Button href="/contact" variant="ghost" size="lg">
-                Get In Touch
-              </Button>
-            </div>
-          </motion.div>
+      {AUDIO_LANDING_ENABLED ? (
+        <AudioHero />
 
-          <motion.div
-            className={styles.heroImageWrapper}
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
-          >
-            <div className={styles.imageReveal}>
-              <Image
-                src="/images/home-portrait.jpg"
-                alt="Adnaan Khan"
-                fill
-                priority
-                className={styles.heroImage}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-              <div className={styles.imageOverlay} />
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      ) : (
+        <section className={styles.hero}>
+          <div className={styles.heroContainer}>
+            <motion.div
+              className={styles.heroContent}
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+            >
+              <h1 className={styles.name}>Adnaan Khan</h1>
+              <h2 className={styles.headline}>
+                I like building and scaling products.
+              </h2>
+              <p className={styles.bio}>
+                I build AI-powered products that eliminate manual drudgery and help
+                enterprises scale knowledge, accuracy, and decision-making.
+              </p>
+              <div className={styles.heroCtas}>
+                <Button href="/projects" variant="primary" size="lg">
+                  View Selected Projects
+                </Button>
+                <Button href="/contact" variant="ghost" size="lg">
+                  Get In Touch
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className={styles.heroImageWrapper}
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+            >
+              <div className={styles.imageReveal}>
+                <Image
+                  src="/images/home-portrait.jpg"
+                  alt="Adnaan Khan"
+                  fill
+                  priority
+                  className={styles.heroImage}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className={styles.imageOverlay} />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+      )}
 
       {/* Social Proof */}
       <SocialProof />

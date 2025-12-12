@@ -1,0 +1,100 @@
+/* Transcript Styles */
+.transcriptWrapper {
+    width: 100%;
+    max-width: 700px;
+    margin-top: var(--space-8);
+}
+
+/* Toggle Button */
+.toggleButton {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    padding: var(--space-4) var(--space-5);
+    font-size: var(--text-base);
+    font-weight: 500;
+    color: var(--text-secondary);
+    background: rgba(var(--bg-secondary-rgb, 30, 30, 30), 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: left;
+}
+
+.toggleButton:hover {
+    color: var(--text-primary);
+    background: rgba(var(--bg-secondary-rgb, 30, 30, 30), 0.8);
+    border-color: var(--accent);
+}
+
+.toggleButton:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.icon {
+    flex-shrink: 0;
+    color: var(--accent);
+}
+
+.chevron {
+    margin-left: auto;
+    transition: transform var(--transition-base);
+}
+
+.chevronUp {
+    transform: rotate(180deg);
+}
+
+/* Content Wrapper */
+.contentWrapper {
+    overflow: hidden;
+}
+
+.content {
+    padding: var(--space-6);
+    margin-top: var(--space-3);
+    background: rgba(var(--bg-secondary-rgb, 30, 30, 30), 0.3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+}
+
+.content p {
+    margin: 0 0 var(--space-4);
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--text-secondary);
+}
+
+.content p:last-child {
+    margin-bottom: 0;
+}
+
+/* First paragraph emphasis */
+.content p:first-child {
+    font-size: var(--text-lg);
+    color: var(--text-primary);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .toggleButton {
+        padding: var(--space-3) var(--space-4);
+        font-size: var(--text-sm);
+    }
+
+    .content {
+        padding: var(--space-4);
+    }
+
+    .content p {
+        font-size: var(--text-sm);
+        line-height: 1.7;
+    }
+
+    .content p:first-child {
+        font-size: var(--text-base);
+    }
+}

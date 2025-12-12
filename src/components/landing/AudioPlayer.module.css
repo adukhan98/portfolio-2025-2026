@@ -1,0 +1,238 @@
+/* Audio Player Styles */
+.playerWrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Start Listening Button */
+.startButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--bg-primary);
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.startButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px var(--accent-glow);
+}
+
+.startButton:active {
+  transform: translateY(0);
+}
+
+.startButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.playIcon {
+  fill: currentColor;
+}
+
+.spinnerIcon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Player Controls Container */
+.playerControls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(var(--bg-secondary-rgb, 30, 30, 30), 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Control Buttons */
+.controlButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+}
+
+.controlButton:hover {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.controlButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Time Display */
+.timeDisplay {
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--text-secondary);
+  min-width: 42px;
+  text-align: center;
+}
+
+/* Seek Bar */
+.seekWrapper {
+  position: relative;
+  flex: 1;
+  height: 6px;
+  min-width: 80px;
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.seekProgress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  transition: width 0.1s linear;
+}
+
+.seekBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.seekBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.seekBar::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+/* Make thumb visible on hover/focus */
+.seekWrapper:hover .seekBar,
+.seekBar:focus {
+  opacity: 1;
+}
+
+.seekWrapper:hover .seekProgress {
+  display: none;
+}
+
+/* Volume Controls */
+.volumeWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.volumeBar {
+  width: 60px;
+  height: 4px;
+  margin: 0;
+  background: var(--border-color);
+  border-radius: var(--radius-full);
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.volumeBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background var(--transition-base);
+}
+
+.volumeBar::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  background: var(--text-primary);
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.volumeBar:hover::-webkit-slider-thumb {
+  background: var(--accent);
+}
+
+.volumeBar:hover::-moz-range-thumb {
+  background: var(--accent);
+}
+
+/* Error Text */
+.errorText {
+  font-size: var(--text-xs);
+  color: #ef4444;
+  margin-left: var(--space-2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .playerControls {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding: var(--space-3);
+  }
+
+  .seekWrapper {
+    order: 10;
+    flex-basis: 100%;
+    margin-top: var(--space-2);
+  }
+
+  .volumeWrapper {
+    display: none; /* Hide on mobile - users can use device volume */
+  }
+
+  .timeDisplay {
+    font-size: var(--text-xs);
+    min-width: 36px;
+  }
+}
