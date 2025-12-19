@@ -16,7 +16,7 @@
     font-size: var(--text-sm);
     font-weight: 500;
     color: var(--text-secondary);
-    text-transform: uppercase;
+    /* text-transform: uppercase; removed */
     letter-spacing: 0.05em;
 }
 

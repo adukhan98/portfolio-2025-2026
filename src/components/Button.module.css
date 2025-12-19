@@ -44,8 +44,8 @@
 
 /* Primary Variant */
 .primary {
-    background: var(--accent);
-    color: white;
+    background: var(--text-primary);
+    color: var(--bg-primary);
 }
 
 .primary::before {
@@ -62,8 +62,8 @@
 }
 
 .primary:hover {
-    background: var(--accent-light);
-    box-shadow: var(--shadow-glow);
+    background: var(--accent);
+    box-shadow: var(--shadow-md);
 }
 
 /* Secondary Variant */

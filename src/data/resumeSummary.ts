@@ -2,19 +2,21 @@
 export const resumeSummary = {
     version: "1.0",
     title: "About Adnaan Khan",
-    scriptText: `Hi, I'm Adnaan Khan — a product builder focused on AI-powered solutions that eliminate manual work and help enterprises scale.
+    scriptText: `Hey—Adnaan here.
 
-I've spent the last several years at the intersection of product management, AI, and enterprise software. Currently, I'm building intelligent automation systems that help organizations make better decisions faster.
+I build AI products that don't feel like AI products. You know, the kind that just *work* without making you read a manual or question your life choices.
 
-My background spans AI product development, from LLM evaluation frameworks to multi-agent systems. I've led teams building voice-powered productivity tools, automated knowledge extraction pipelines, and enterprise-grade AI applications.
+I've spent the last few years in consulting, building AI tooling and enterprise software solutions. Right now, I'm building intelligent automation systems—basically, software that helps teams make better decisions without drowning in spreadsheets.
 
-What drives me is turning complex technical capabilities into elegant, user-friendly products. I believe the best AI products are the ones that feel invisible — they just work, making people's lives easier without requiring them to understand the technology underneath.
+My background? Think LLM evaluation frameworks, multi-agent systems, voice-powered productivity tools, and automated knowledge pipelines. Sounds fancy, but really it's about taking complex tech and making it feel stupidly simple.
 
-Previously, I've worked across startups and established companies, always gravitating toward roles where I could bridge the gap between technical possibilities and real user needs.
+What gets me out of bed: turning cutting-edge AI into products that *disappear*. The best tools are invisible—they just make life easier.
 
-When I'm not building products, you'll find me exploring new AI research, mentoring aspiring PMs, or thinking about the future of human-AI collaboration.
+I've worked across startups and big companies, always gravitating toward the messy middle where technical possibility meets actual human need.
 
-If you're working on something interesting in AI, I'd love to connect. Let's build something meaningful together.`,
+When I'm not shipping features, I'm reading AI research papers, mentoring students and immigrants, or thinking wayy too hard about the future of human-AI collaboration.
+
+Building something cool in AI? Let's connect. I'm always down to jam on interesting problems.`,
     audioSrc: "/audio/resume-summary-v1.mp3",
     durationSeconds: 90,
     lastUpdatedISO: "2024-12-12"

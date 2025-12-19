@@ -17,8 +17,8 @@ export default function ProjectsPage() {
                 <AnimatedSection>
                     <h1>Selected Projects</h1>
                     <p>
-                        Real outcomes. Measurable impact. <br />
-                        Driving AI adoption and automation across the enterprise.
+                        Stuff I've actually shipped. Real problems, real solutions, real impact. <br />
+                        (Spoiler: There's a lot of AI, but zero buzzwords. Promise.)
                     </p>
                 </AnimatedSection>
             </header>
@@ -26,14 +26,15 @@ export default function ProjectsPage() {
             <section className={styles.caseStudies}>
                 <div className={styles.grid}>
                     {caseStudies.map((study, index) => (
-                        <CaseStudyCard
-                            key={study.slug}
-                            slug={study.slug}
-                            title={study.title}
-                            summary={study.summary}
-                            tags={study.tags}
-                            index={index}
-                        />
+                        <AnimatedSection key={study.slug} delay={index * 0.15}>
+                            <CaseStudyCard
+                                slug={study.slug}
+                                title={study.title}
+                                summary={study.summary}
+                                tags={study.tags}
+                                index={index}
+                            />
+                        </AnimatedSection>
                     ))}
                 </div>
             </section>

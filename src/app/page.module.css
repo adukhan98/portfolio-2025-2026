@@ -1,22 +1,19 @@
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
-  padding-top: var(--header-height);
+  padding: var(--space-20) 0;
+  background: var(--bg-primary);
 }
 
 .heroContainer {
   width: 100%;
-  max-width: 1600px;
-  /* Custom wider width for split hero */
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-6);
-  display: grid;
-  gap: var(--space-12);
-  align-items: center;
+  padding: 0 var(--space-8);
 }
 
 @media (min-width: 1024px) {
@@ -37,7 +34,7 @@
   font-family: var(--font-body);
   font-size: var(--text-sm);
   font-weight: 600;
-  text-transform: uppercase;
+  /* text-transform: uppercase; removed */
   letter-spacing: 0.2em;
   color: var(--accent);
   margin-bottom: var(--space-6);
@@ -130,156 +127,102 @@
 
 /* Featured Section (Now Experience Section) */
 .featuredWork {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-12);
+  padding: var(--space-20) 0;
+  background: var(--surface-1);
 }
 
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-8);
 }
 
 .sectionHeader {
-  margin-bottom: var(--space-16);
+  margin-bottom: var(--space-12);
   display: flex;
-  align-items: center;
-  gap: var(--space-8);
+  align-items: baseline;
+  justify-content: space-between;
 }
 
 .sectionTitle {
-  font-size: var(--text-3xl);
-  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: var(--text-4xl);
+  color: var(--text-primary);
 }
 
-.divider {
-  height: 1px;
-  background: var(--border-color);
-  width: 100%;
-  opacity: 0.5;
-}
-
-.viewMoreLink {
-  white-space: nowrap;
-  font-size: var(--text-sm);
-  font-weight: 600;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 2px;
-}
-
-.viewMoreLink:hover {
-  border-bottom-color: var(--accent);
-}
-
-/* Timeline Components */
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-12);
-  position: relative;
-  padding-left: var(--space-4);
-  max-width: 900px;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background: var(--border-color);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
 }
 
 .timelineItem {
-  position: relative;
-  padding-left: var(--space-6);
-  /* reduced from 10 */
-}
-
-@media (min-width: 768px) {
-  .timelineItem {
-    padding-left: var(--space-10);
-  }
-}
-
-.timelineDot {
-  position: absolute;
-  left: -5px;
-  top: 6px;
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
   background: var(--bg-primary);
-  border: 2px solid var(--accent);
-  transition: all var(--transition-base);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: all var(--transition-fast);
 }
 
-.timelineItem:hover .timelineDot {
-  background: var(--accent);
-  box-shadow: 0 0 15px var(--accent-glow);
+.timelineItem:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .timelineHeader {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: var(--space-1);
-}
-
-@media (max-width: 600px) {
-  .timelineHeader {
-    flex-direction: column;
-    gap: var(--space-1);
-  }
+  flex-direction: column;
+  margin-bottom: var(--space-4);
 }
 
 .timelineHeader h3 {
+  font-family: var(--font-body);
   font-size: var(--text-xl);
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--text-primary);
 }
 
 .timelinePeriod {
-  font-size: var(--text-sm);
-  color: var(--text-secondary);
-  font-variant-numeric: tabular-nums;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  /* text-transform: uppercase; removed */
+  letter-spacing: 0.05em;
+  margin-top: var(--space-1);
 }
 
 .timelineRole {
-  font-family: var(--font-body);
-  font-size: var(--text-base);
-  color: var(--accent);
-  margin-bottom: var(--space-4);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  display: block;
+  font-family: var(--font-accent);
+  font-size: var(--text-lg);
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-6);
 }
 
 .timelineDesc {
-  list-style: none;
-  /* Custom bullet or none? Let's use standard bullets for readability as requested, or custom dashes */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .timelineDesc li {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: 1.5;
   position: relative;
   padding-left: var(--space-4);
-  margin-bottom: var(--space-2);
-  color: var(--text-secondary);
-  font-size: var(--text-base);
-  line-height: 1.6;
 }
 
 .timelineDesc li::before {
-  content: '•';
-  /* or '—' */
+  content: '→';
   position: absolute;
   left: 0;
   color: var(--accent);
+  opacity: 0.6;
 }
 
 .viewAllWrapper {

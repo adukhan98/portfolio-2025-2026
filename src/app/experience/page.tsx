@@ -16,8 +16,7 @@ export default function ExperiencePage() {
                 <AnimatedSection>
                     <h1>Experience</h1>
                     <p>
-                        From engineering to product—building AI-enabled solutions that
-                        transform enterprise workflows.
+                        From engineering to product. Building AI-powered tools that actually solve problems people care about.
                     </p>
                 </AnimatedSection>
             </header>

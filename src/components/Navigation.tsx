@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import ThemeToggle from "./ThemeToggle";
 import styles from "./Navigation.module.css";
 
 const navLinks = [
@@ -58,7 +57,6 @@ export default function Navigation() {
                             )}
                         </Link>
                     ))}
-                    <ThemeToggle />
                 </nav>
 
                 {/* Mobile Toggle */}
@@ -91,9 +89,6 @@ export default function Navigation() {
                                     {link.label}
                                 </Link>
                             ))}
-                            <div className={styles.mobileThemeToggle}>
-                                <ThemeToggle />
-                            </div>
                         </nav>
                     </motion.div>
                 )}

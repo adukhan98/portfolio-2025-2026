@@ -1,0 +1,31 @@
+.preloader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.logo {
+    font-family: var(--font-display);
+    font-size: var(--text-5xl);
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.04em;
+}
+
+.line {
+    width: 60px;
+    height: 2px;
+    background: var(--accent);
+    transform-origin: left;
+}

@@ -16,17 +16,16 @@ export default function AudioHero() {
                 {/* Left content */}
                 <motion.div
                     className={styles.heroContent}
-                    initial={{ opacity: 0, x: -30 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                     <span className={styles.name}>Adnaan Khan</span>
                     <h1 className={styles.headline}>
-                        I like building and scaling products.
+                        I turn messy problems into products people actually want to use.
                     </h1>
                     <p className={styles.bio}>
-                        I build AI-powered products that eliminate manual drudgery and help
-                        enterprises scale knowledge, accuracy, and decision-making.
+                        Obsessed with making AI feel less like magic and more like a really good assistant. Currently: building tools that eliminate the boring stuff so teams can focus on what actually matters.
                     </p>
 
                     {/* Audio Player */}
@@ -44,23 +43,23 @@ export default function AudioHero() {
                         {/* Secondary CTAs */}
                         <div className={styles.secondaryCtas}>
                             <Link href="#transcript" className={styles.textLink} onClick={() => track("transcript_open")}>
-                                Read Summary
+                                listen to summary
                             </Link>
-                            <span className={styles.divider}>•</span>
+                            <span className={styles.divider}>/</span>
                             <Link href="/resume.pdf" className={styles.textLink} target="_blank">
-                                View Resume
+                                resume
                             </Link>
-                            <span className={styles.divider}>•</span>
-                            <Link href="https://linkedin.com/in/adukhan98" className={styles.textLink} target="_blank">
-                                LinkedIn
-                            </Link>
+                            <span className={styles.divider}>/</span>
+                            <a href="https://linkedin.com/in/adukhan98" className={styles.textLink} target="_blank" rel="noopener noreferrer">
+                                linkedin
+                            </a>
                         </div>
                     </div>
 
-                    {/* Transcript */}
+                    {/* Transcript Integration */}
                     <Transcript
                         text={resumeSummary.scriptText}
-                        title="Read Transcript"
+                        title="read transcript"
                         onToggle={(isExpanded) => {
                             if (isExpanded) track("transcript_open");
                         }}
@@ -70,18 +69,18 @@ export default function AudioHero() {
                 {/* Right image */}
                 <motion.div
                     className={styles.heroImageWrapper}
-                    initial={{ opacity: 0, scale: 0.95 }}
+                    initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
+                    transition={{ duration: 1.2, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
                 >
                     <div className={styles.imageReveal}>
                         <Image
                             src="/images/home-portrait.jpg"
-                            alt="Adnaan Khan"
+                            alt="Adnaan Khan - AI Product Manager"
                             fill
                             priority
                             className={styles.heroImage}
-                            sizes="(max-width: 768px) 100vw, 50vw"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
                         />
                         <div className={styles.imageOverlay} />
                     </div>

@@ -7,22 +7,22 @@ const stats = [
     {
         value: "200+",
         label: "Users",
-        description: "Using AI tools I built",
+        description: "Actively using AI tools I shipped",
     },
     {
-        value: "13M+",
+        value: "23M+",
         label: "Impressions",
-        description: "From AI enablement content",
+        description: "Reached through AI content & enablement",
     },
     {
         value: "25+",
         label: "Hours Saved Weekly",
-        description: "Through automation",
+        description: "Automated away every single week",
     },
     {
         value: "6x",
         label: "Usage Increase",
-        description: "After enablement programs",
+        description: "After smart onboarding & training",
     },
 ];
 

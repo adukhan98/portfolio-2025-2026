@@ -1,20 +1,27 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Inter } from "next/font/google";
+import { Outfit, Bricolage_Grotesque, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import Preloader from "@/components/Preloader";
 
-const playfair = Playfair_Display({
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+
+const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
   variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
+const instrument = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-body",
+  variable: "--font-accent",
   display: "swap",
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -57,18 +64,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${playfair.variable} ${inter.variable}`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Navigation />
-          <main>{children}</main>
-          <Footer />
-        </ThemeProvider>
+    <html lang="en">
+      <body className={`${bricolage.variable} ${outfit.variable} ${instrument.variable}`}>
+        <Preloader />
+        <Navigation />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

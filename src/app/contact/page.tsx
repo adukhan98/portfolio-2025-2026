@@ -17,24 +17,26 @@ export default function ContactPage() {
         <div className={styles.page}>
             <header className={styles.header}>
                 <AnimatedSection>
-                    <h1>Let&apos;s build something meaningful.</h1>
+                    <h1>Let's talk.</h1>
                     <p>
-                        Whether you&apos;re hiring, partnering, or exploring AI-enabled product
-                        opportunities—I&apos;d love to connect.
+                        Hiring? Building something ambitious? Just want to chat about AI products or the perfect espresso grind? I'm down for all of it.
+                    </p>
+                    <p>
+                        Drop me a line below, or find me on the usual internet corners →
                     </p>
                 </AnimatedSection>
             </header>
 
             <div className={styles.content}>
-                <AnimatedSection delay={0.1} className={styles.formSection}>
+                <AnimatedSection delay={0.1} direction="left" className={styles.formSection}>
                     <h2>Send a Message</h2>
                     <ContactForm />
                 </AnimatedSection>
 
-                <AnimatedSection delay={0.2} className={styles.aside}>
+                <AnimatedSection delay={0.2} direction="right" className={styles.aside}>
                     <div className={styles.asideCard}>
                         <h3>Download Resume</h3>
-                        <p>Get a detailed overview of my experience and skills.</p>
+                        <p>A detailed look at my work and skills.</p>
                         <Button href="/resume.pdf" variant="secondary" download>
                             Download PDF
                         </Button>
@@ -42,7 +44,7 @@ export default function ContactPage() {
 
                     <div className={styles.asideCard}>
                         <h3>Connect</h3>
-                        <p>Find me on professional networks.</p>
+                        <p>Let's connect.</p>
                         <div className={styles.socialLinks}>
                             <a
                                 href="https://www.linkedin.com/in/adnaankhan98/"

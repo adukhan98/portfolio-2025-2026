@@ -36,18 +36,17 @@ export default function Home() {
             >
               <h1 className={styles.name}>Adnaan Khan</h1>
               <h2 className={styles.headline}>
-                I like building and scaling products.
+                I turn messy problems into products people actually want to use.
               </h2>
               <p className={styles.bio}>
-                I build AI-powered products that eliminate manual drudgery and help
-                enterprises scale knowledge, accuracy, and decision-making.
+                Obsessed with making AI feel less like magic and more like a really good assistant. Currently: building tools that eliminate the boring stuff so teams can focus on what actually matters.
               </p>
               <div className={styles.heroCtas}>
                 <Button href="/projects" variant="primary" size="lg">
-                  View Selected Projects
+                  view selected projects
                 </Button>
                 <Button href="/contact" variant="ghost" size="lg">
-                  Get In Touch
+                  get in touch
                 </Button>
               </div>
             </motion.div>
@@ -82,9 +81,9 @@ export default function Home() {
         <div className={styles.container}>
           <AnimatedSection>
             <div className={styles.sectionHeader}>
-              <h2 className={styles.sectionTitle}>Experience</h2>
+              <h2 className={styles.sectionTitle}>experience</h2>
               <div className={styles.divider} />
-              <Link href="/experience" className={styles.viewMoreLink}>View Full Timeline</Link>
+              <Link href="/experience" className={styles.viewMoreLink}>view full timeline</Link>
             </div>
           </AnimatedSection>
 
@@ -92,19 +91,16 @@ export default function Home() {
             {experience.slice(0, 3).map((role, index) => (
               <AnimatedSection key={index} delay={index * 0.1}>
                 <div className={styles.timelineItem}>
-                  <div className={styles.timelineDot} />
-                  <div className={styles.timelineContent}>
-                    <div className={styles.timelineHeader}>
-                      <h3>{role.company}</h3>
-                      <span className={styles.timelinePeriod}>{role.period}</span>
-                    </div>
-                    <h4 className={styles.timelineRole}>{role.role}</h4>
-                    <ul className={styles.timelineDesc}>
-                      {role.description.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
+                  <div className={styles.timelineHeader}>
+                    <h3>{role.company}</h3>
+                    <span className={styles.timelinePeriod}>{role.period}</span>
                   </div>
+                  <span className={styles.timelineRole}>{role.role}</span>
+                  <ul className={styles.timelineDesc}>
+                    {role.description.slice(0, 2).map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
                 </div>
               </AnimatedSection>
             ))}
@@ -115,9 +111,9 @@ export default function Home() {
       {/* CTA Section */}
       <section className={styles.ctaSection}>
         <AnimatedSection className={styles.ctaContent}>
-          <h2>Ready to build something meaningful?</h2>
+          <h2>working on something ambitious? i&apos;m in.</h2>
           <Button href="/contact" variant="primary" size="lg">
-            Let&apos;s Talk
+            let&apos;s talk
           </Button>
         </AnimatedSection>
       </section>

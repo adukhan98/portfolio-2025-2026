@@ -96,7 +96,7 @@
     font-size: var(--text-lg);
     font-weight: 500;
     color: var(--accent);
-    text-transform: uppercase;
+    /* text-transform: uppercase; removed */
     letter-spacing: 0.05em;
 }
 
