@@ -13,34 +13,14 @@ import styles from "./page.module.css";
 // However, reusing css modules across files in Next.js isn't direct if they are not global. 
 // I will copy the minimal necessary timeline styles to page.module.css to avoid conflicts or duplicate the loop.
 
-// Feature flag for audio-first landing page
+// Feature flag for audio-first landing page (defaults to enabled)
 const flag = process.env.NEXT_PUBLIC_AUDIO_LANDING;
-const AUDIO_LANDING_ENABLED = flag === '1' || flag === 'true';
-
-if (typeof window !== "undefined") {
-  console.log("[Debug] Flag:", flag, "Enabled:", AUDIO_LANDING_ENABLED);
-}
+const AUDIO_LANDING_ENABLED =
+  flag === undefined ? true : flag === "1" || flag === "true";
 
 export default function Home() {
   return (
     <>
-      {/* Temporary Debug Banner */}
-      <div style={{
-        background: '#ff0000',
-        color: 'white',
-        padding: '8px',
-        textAlign: 'center',
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 9999,
-        fontSize: '12px',
-        fontWeight: 'bold'
-      }}>
-        DEBUG: ENV_VAR=[{flag}] | ENABLED=[{AUDIO_LANDING_ENABLED.toString()}]
-      </div>
-
       {/* Hero Section */}
       {AUDIO_LANDING_ENABLED ? (
         <AudioHero />
