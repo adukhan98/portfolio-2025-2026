@@ -17,8 +17,8 @@ export default function ProjectsPage() {
                 <AnimatedSection>
                     <h1>Selected Projects</h1>
                     <p>
-                        Stuff I've actually shipped. Real problems, real solutions, real impact. <br />
-                        (Spoiler: There's a lot of AI, but zero buzzwords. Promise.)
+                        Stuff I&apos;ve actually shipped. Real problems, real solutions, real impact. <br />
+                        (Spoiler: There&apos;s a lot of AI, but zero buzzwords. Promise.)
                     </p>
                 </AnimatedSection>
             </header>

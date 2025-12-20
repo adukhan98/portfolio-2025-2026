@@ -2,7 +2,6 @@ import { Metadata } from "next";
 import AnimatedSection from "@/components/AnimatedSection";
 import ContactForm from "@/components/ContactForm";
 import Button from "@/components/Button";
-import Link from "next/link";
 import { Linkedin, Github, Instagram } from "lucide-react";
 import styles from "./page.module.css";
 
@@ -17,9 +16,9 @@ export default function ContactPage() {
         <div className={styles.page}>
             <header className={styles.header}>
                 <AnimatedSection>
-                    <h1>Let's talk.</h1>
+                    <h1>Let&apos;s talk.</h1>
                     <p>
-                        Hiring? Building something ambitious? Just want to chat about AI products or the perfect espresso grind? I'm down for all of it.
+                        Hiring? Building something ambitious? Just want to chat about AI products or the perfect espresso grind? I&apos;m down for all of it.
                     </p>
                     <p>
                         Drop me a line below, or find me on the usual internet corners →
@@ -44,7 +43,7 @@ export default function ContactPage() {
 
                     <div className={styles.asideCard}>
                         <h3>Connect</h3>
-                        <p>Let's connect.</p>
+                        <p>Let&apos;s connect.</p>
                         <div className={styles.socialLinks}>
                             <a
                                 href="https://www.linkedin.com/in/adnaankhan98/"

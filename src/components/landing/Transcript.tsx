@@ -31,8 +31,12 @@ export default function Transcript({
     // Handle scroll into view when expanding via hash
     useEffect(() => {
         if (typeof window !== "undefined" && window.location.hash === "#transcript") {
-            setIsExpanded(true);
-            buttonRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            // Use a small delay to avoid cascading render warning and ensure DOM is ready
+            const timer = setTimeout(() => {
+                setIsExpanded(true);
+                buttonRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+            }, 100);
+            return () => clearTimeout(timer);
         }
     }, []);
 

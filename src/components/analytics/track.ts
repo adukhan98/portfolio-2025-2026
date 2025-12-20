@@ -14,9 +14,10 @@ export const track = (
     if (typeof window === "undefined") return;
 
     // Check if gtag exists (Google Analytics)
-    if ("gtag" in window && typeof (window as any).gtag === "function") {
+    const win = window as Window & { gtag?: (...args: unknown[]) => void };
+    if (typeof win.gtag === "function") {
         try {
-            (window as any).gtag("event", eventName, params);
+            win.gtag("event", eventName, params);
         } catch (err) {
             console.warn("Analytics error:", err);
         }

@@ -19,18 +19,31 @@ export default function ContactForm() {
         e.preventDefault();
         setStatus("sending");
 
-        // Simulate form submission (replace with actual EmailJS or API call)
+        const myForm = e.target as HTMLFormElement;
+        const formData = new FormData(myForm);
+
         try {
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+            await fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as unknown as Record<string, string>).toString(),
+            });
             setStatus("success");
             setFormData({ name: "", email: "", message: "" });
-        } catch {
+        } catch (error) {
+            console.error("Form submission error:", error);
             setStatus("error");
         }
     };
 
     return (
-        <form className={styles.form} onSubmit={handleSubmit}>
+        <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+            name="contact"
+            data-netlify="true"
+        >
+            <input type="hidden" name="form-name" value="contact" />
             <div className={styles.field}>
                 <label htmlFor="name" className={styles.label}>
                     Name

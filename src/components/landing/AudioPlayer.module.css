@@ -45,8 +45,13 @@
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Player Controls Container */
@@ -55,12 +60,12 @@
   align-items: center;
   gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
-  background: rgba(var(--bg-secondary-rgb, 30, 30, 30), 0.8);
+  background: var(--accent);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-full);
+  box-shadow: 0 8px 32px var(--accent-glow);
 }
 
 /* Control Buttons */
@@ -71,7 +76,7 @@
   width: 40px;
   height: 40px;
   padding: 0;
-  color: var(--text-primary);
+  color: var(--bg-primary);
   background: transparent;
   border: none;
   border-radius: var(--radius-full);
@@ -80,8 +85,8 @@
 }
 
 .controlButton:hover {
-  background: var(--accent);
-  color: var(--bg-primary);
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
 }
 
 .controlButton:focus-visible {
@@ -93,7 +98,7 @@
 .timeDisplay {
   font-size: var(--text-sm);
   font-variant-numeric: tabular-nums;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   min-width: 42px;
   text-align: center;
 }
@@ -104,7 +109,7 @@
   flex: 1;
   height: 6px;
   min-width: 80px;
-  background: var(--border-color);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
@@ -114,7 +119,7 @@
   top: 0;
   left: 0;
   height: 100%;
-  background: var(--accent);
+  background: var(--bg-primary);
   border-radius: var(--radius-full);
   pointer-events: none;
   transition: width 0.1s linear;
@@ -137,7 +142,7 @@
   -webkit-appearance: none;
   width: 14px;
   height: 14px;
-  background: var(--accent);
+  background: var(--bg-primary);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -145,7 +150,7 @@
 .seekBar::-moz-range-thumb {
   width: 14px;
   height: 14px;
-  background: var(--accent);
+  background: var(--bg-primary);
   border-radius: 50%;
   cursor: pointer;
   border: none;
@@ -172,7 +177,7 @@
   width: 60px;
   height: 4px;
   margin: 0;
-  background: var(--border-color);
+  background: rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-full);
   -webkit-appearance: none;
   appearance: none;
@@ -183,7 +188,7 @@
   -webkit-appearance: none;
   width: 12px;
   height: 12px;
-  background: var(--text-primary);
+  background: var(--bg-primary);
   border-radius: 50%;
   cursor: pointer;
   transition: background var(--transition-base);
@@ -192,18 +197,18 @@
 .volumeBar::-moz-range-thumb {
   width: 12px;
   height: 12px;
-  background: var(--text-primary);
+  background: var(--bg-primary);
   border-radius: 50%;
   cursor: pointer;
   border: none;
 }
 
 .volumeBar:hover::-webkit-slider-thumb {
-  background: var(--accent);
+  background: #fff;
 }
 
 .volumeBar:hover::-moz-range-thumb {
-  background: var(--accent);
+  background: #fff;
 }
 
 /* Error Text */
@@ -228,7 +233,8 @@
   }
 
   .volumeWrapper {
-    display: none; /* Hide on mobile - users can use device volume */
+    display: none;
+    /* Hide on mobile - users can use device volume */
   }
 
   .timeDisplay {
